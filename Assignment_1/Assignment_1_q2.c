@@ -15,6 +15,11 @@ int main() {
     	for(i=1; i<n+1; i++){
     		factorial *= i;
 		}
+	}
+	else{
+		for(i=n; i<0; i++){
+			factorial *= i;
+		}
 	}	
 	//printing the sum
 	printf("The factorial of the %d is %d\n", n, factorial);
