@@ -14,6 +14,9 @@ n = int(input("What is the \'n\' value ? "))
 if n>0:
     for i in range(1,n+1):
         factorial *=i
-    print (factorial)
+elif n<0 :
+    for i in range(n,0):
+        factorial *=i
 else:
-    print (factorial)
+    factorial = 1
+print("The factorial of the number {} is {}".format(n,factorial))
