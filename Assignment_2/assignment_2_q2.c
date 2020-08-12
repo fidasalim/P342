@@ -1,5 +1,5 @@
 /*
-Create two vectors of type A=(a1,a2,a3) and B=(b1,b2,b3) with numbers of your choice (but
+Q2) Create two vectors of type A=(a1,a2,a3) and B=(b1,b2,b3) with numbers of your choice (but
        not random numbers) in the code itself. Find A+B and A.B (dot product). (marks 3)
 */
 
