@@ -9,9 +9,27 @@ Create 3x3 matrices M=(a11,a12 … a33) and N=(b11,b12, …, b33) with numbers o
        the matrices from the files. Find M x A and M x N.
 
 """
-from matrix_AB import A
-from matrix_M import M
-from matrix_N import N
+M = []
+N = []
+A = []
+with open('M.txt','r') as M_matrix:
+    for line in M_matrix:
+        sval = line.rstrip('\n').split(' ')
+        sval = [float(i) for i in sval]
+        M.append(sval)  
+M_matrix.close()
+with open('N.txt','r') as N_matrix:
+    for line in N_matrix:
+        sval = line.rstrip('\n').split(' ')
+        sval = [float(i) for i in sval]
+        N.append(sval)  
+N_matrix.close()
+with open('A.txt','r') as A_matrix:
+    for line in A_matrix:
+        sval = line.rstrip('\n').split(' ')
+        sval = [float(i) for i in sval]
+        A.append(sval)  
+A_matrix.close()
 
 print('The matrix M is {}'.format(M))
 print('The matrix N is {}'.format(N))
@@ -38,9 +56,9 @@ print ("MxA = {}".format(Q))
 
 """
 Solution:
-The matrix M is [[1, 2, -3], [4, -5, 6], [0, 8, 9]]
-The matrix N is [[4, 9, -7], [0, 6, 2], [9, -1, 8]]
-The matrix A is [[2], [3], [4]]
-MxN = [[-23, 24, -27], [70, 0, 10], [81, 39, 88]]
-MxA = [[-4], [17], [60]]
+The matrix M is [[1.0, 2.0, -3.0], [4.0, -5.0, 6.0], [0.0, 8.0, 9.0]]
+The matrix N is [[4.0, 9.0, -7.0], [0.0, 6.0, 2.5], [9.0, -1.0, 8.0]]
+The matrix A is [[2.0], [-3.5], [4.0]]
+MxN = [[-23.0, 24.0, -26.0], [70.0, 0.0, 7.5], [81.0, 39.0, 92.0]]
+MxA = [[-17.0], [49.5], [8.0]]
 """

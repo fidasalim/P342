@@ -14,10 +14,8 @@ int main() {
 	float sum_1,total_1,average_1 = 0;	
 	for (i=0; i<6;i++){
 		for (j=0;j<6;j++){
-			if (i<j){
 	            sum_1 += abs(i-j);
 	            total_1 = total_1+1;
-	    	}
 		}
 	}
 	average_1 = sum_1/total_1;
@@ -31,14 +29,8 @@ int main() {
 		for (y=0;y<6;y++){
 			for (a=0;a<6;a++){
 				for (b=0;b<6;b++){
-					if(b>y){
 						sum_2 += abs(x-a) + abs(y-b);
 						total_2 ++;
-					}
-					if (a>x && b==y){
-						sum_2 += abs(x-a);
-						total_2 ++;
-					}
 				}
 			}
 		}
@@ -49,7 +41,7 @@ int main() {
 }
 /*
 Solution:
-The average distance between two points on a straight line made of discrete 6 points is 2.333333.
-The average distance between two points on a 6 by 6 two-dimensional grid (no diagonal connections) is 4.000000.
+The average distance between two points on a straight line made of discrete 6 points is 1.944444.
+The average distance between two points on a 6 by 6 two-dimensional grid (no diagonal connections) is 3.888889.
 
 */
