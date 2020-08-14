@@ -5,45 +5,45 @@ int main(){
 	//reading file A.txt
 	FILE *A_matrix;
 	A_matrix=fopen("A.txt", "r");
-    float A[3][1]={0.0};
-    printf("The matrix A is [");
-    for(i=0 ;i<3; i++){
-    	printf("[");
-        for(j=0; j<1; j++){
-            fscanf(A_matrix, "%f%*c",&A[i][j]);
-            printf("%f",A[i][j]);
-        }
-        printf("],");
-    }
-    printf("]\n");
+	float A[3][1]={0.0};
+    	printf("The matrix A is [");
+    	for(i=0 ;i<3; i++){
+    		printf("[");
+        	for(j=0; j<1; j++){
+            		fscanf(A_matrix, "%f%*c",&A[i][j]);
+            		printf("%f",A[i][j]);
+        	}
+        	printf("],");
+    	}
+    	printf("]\n");
     
-    //reading file M.txt 
-    FILE *M_matrix;
+    	//reading file M.txt 
+    	FILE *M_matrix;
 	M_matrix=fopen("M.txt", "r");
-    float M[3][3]={0.0};
-    printf("The matrix M is [");
-    for(i=0 ;i<3; i++){
-    	printf("[");
-        for(j=0; j<3; j++){
-            fscanf(M_matrix, "%f%*c%*",&M[i][j]);
-            printf("%f,",M[i][j]);
-        }
-        printf("],");
+    	float M[3][3]={0.0};
+    	printf("The matrix M is [");
+   	for(i=0 ;i<3; i++){
+    		printf("[");
+        	for(j=0; j<3; j++){
+           		fscanf(M_matrix, "%f%*c%*",&M[i][j]);
+            		printf("%f,",M[i][j]);
+        	}
+        	printf("],");
 	}
 	printf("]\n");
 	
 	//reading file N.txt 
-    FILE *N_matrix;
+    	FILE *N_matrix;
 	N_matrix=fopen("N.txt", "r");
-    float N[3][3]={0.0};
-    printf("The matrix N is [");
-    for(i=0 ;i<3; i++){
-    	printf("[");
-        for(j=0; j<3; j++){
-            fscanf(N_matrix, "%f%*c%*",&N[i][j]);
-            printf("%f,",N[i][j]);
-        }
-        printf("],");
+	float N[3][3]={0.0};
+    	printf("The matrix N is [");
+    	for(i=0 ;i<3; i++){
+    		printf("[");
+        	for(j=0; j<3; j++){
+            		fscanf(N_matrix, "%f%*c%*",&N[i][j]);
+            		printf("%f,",N[i][j]);
+        	}
+       		 printf("],");
 	}
 	printf("]\n");
 	
