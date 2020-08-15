@@ -5,51 +5,35 @@ Q2) Create two vectors of type A=(a1,a2,a3) and B=(b1,b2,b3) with numbers of you
 
 #include <stdio.h>
 int main() {
-	float A[3][1] = {{2},{-3.5},{4}};
-	float B[3][1] = {{5},{6},{-7}};
-	float C[3][1];
-	float D[3][1];
+	float A[3] = {2,-3.5,4};
+	float B[3] = {5,6,-7};
+	float C[3];
+	float D[3];
 	int i,j;
 	
-	printf("The matrix A is [");
+	printf("The vector A is [");
 	for (i=0;i<3;i++){
-		printf("[");
-		for(j=0;j<1;j++){
-			printf("%f",A[i][j]);
-		}
-		printf("],");	
+		printf("%f,",A[i]);	
 	}
 	printf("]\n");
 	
-	printf("The matrix B is [");
+	printf("The vector B is [");
 	for (i=0;i<3;i++){
-		printf("[");
-		for(j=0;j<1;j++){
-			printf("%f",B[i][j]);
-		}
-		printf("],");	
+		printf("%f,",B[i]);	
 	}
 	printf("]\n");
 	
-	printf("The matrix A+B is [");
+	printf("The vector A+B is [");
 	for (i=0;i<3;i++){
-		printf("[");
-		for(j=0;j<1;j++){
-			C[i][j] = A[i][j]+B[i][j];
-			printf("%f",C[i][j]);
-		}
-		printf("],");	
+		C[i] = A[i]+B[i];
+		printf("%f,",C[i]);
 	}
 	printf("]\n");
 	
-	printf("The matrix A.B is [");
+	printf("The vector A.B is [");
 	for (i=0;i<3;i++){
-		printf("[");
-		for(j=0;j<1;j++){
-			D[i][j] = A[i][j]*B[i][j];
-			printf("%f",D[i][j]);
-		}
-		printf("],");	
+		D[i] = A[i]*B[i];
+		printf("%f,",D[i]);
 	}
 	printf("]\n");
     return 0;    
@@ -58,8 +42,8 @@ int main() {
 
 /*
 Solution:
-The matrix A is [[2.000000],[-3.500000],[4.000000],]
-The matrix B is [[5.000000],[6.000000],[-7.000000],]
-The matrix A+B is [[7.000000],[2.500000],[-3.000000],]
-The matrix A.B is [[10.000000],[-21.000000],[-28.000000],]
+The vector A is [2.000000,-3.500000,4.000000,]
+The vector B is [5.000000,6.000000,-7.000000,]
+The vector A+B is [7.000000,2.500000,-3.000000,]
+The vector A.B is [10.000000,-21.000000,-28.000000,]
 */
