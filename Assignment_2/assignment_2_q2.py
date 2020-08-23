@@ -13,17 +13,16 @@ B = [5,6,-7]
 print('The vector A is {}'.format(A))
 print('The vector B is {}'.format(B))
 C = [0 for x in range(3)]
-D = [0 for x in range(3)]
 for i in range(3):
     C[i] = A[i]+B[i]
-    D[i]= A[i]*B[i]
+    dot = A[i]*B[i]
 print ('A+B = {}'.format(C))
-print ('A.B = {}'.format(D))
+print ('A.B = {}'.format(dot))
 
 """
 Solution:
 The vector A is [2, -3.5, 4]
 The vector B is [5, 6, -7]
 A+B = [7, 2.5, -3]
-A.B = [10, -21.0, -28]
+A.B = -39
 """
