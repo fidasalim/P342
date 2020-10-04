@@ -21,7 +21,7 @@ print('(iii) Using newton_rapsi method,\n the solution x for f2(x) = {} = 0 is {
 
 #Question3
 polynomial = 'x^4 -3x^3 - 7x^2 +27x^1 -18'
-print('***\nQuestion_3\nThe roots of the polynomial {} is {}\n***\n'.format(polynomial,lib.polynomial_roots(7.5,P,R)))
+print('***\nQuestion_2\nThe roots of the polynomial {} is {}\n***\n'.format(polynomial,lib.polynomial_roots(7.5,P,R)))
 
 """
 Solution:
@@ -50,7 +50,7 @@ Question_1(b)
  the solution x for f2(x) = -x-cosx = 0 is (-0.7390851332151608, '+-', 0.0)
 
 ***
-Question_3
+Question_2
 The roots of the polynomial x^4 -3x^3 - 7x^2 +27x^1 -18 is [3.000000000033364, 1.9999999999218425, 1.0000000000476508, -3.0000000000028573]
 ***
 """
