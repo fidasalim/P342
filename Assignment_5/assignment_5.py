@@ -19,7 +19,7 @@ print('(i) Using bisection method,\n the solution x for f2(x)= {} = 0 is  ({})\n
 print('(ii) Using regular_falsi method,\n the solution x for f2(x) = {} = 0 is {}\n'.format(f2.name,lib.regula_falsi(f2,-4,0)))
 print('(iii) Using newton_rapsi method,\n the solution x for f2(x) = {} = 0 is {}\n'.format(f2.name,lib.newton_raphson(f2, 2)))
 
-#Question3
+#Question2
 polynomial = 'x^4 -3x^3 - 7x^2 +27x^1 -18'
 print('***\nQuestion_2\nThe roots of the polynomial {} is {}\n***\n'.format(polynomial,lib.polynomial_roots(7.5,P,R)))
 
