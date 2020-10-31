@@ -1,0 +1,12 @@
+N_value		Midpoint		Analytical_value
+5		1.308092		1.30685
+10		1.307165		1.30685
+25		1.306903		1.30685
+N_value		Trepizoidal		Analytical_value
+5		1.304365		1.30685
+10		1.306229		1.30685
+25		1.306753		1.30685
+N_value		Simpson_method		Analytical_value
+6		1.3068302		1.30685
+10		1.3068498		1.30685
+26		1.3068528		1.30685
