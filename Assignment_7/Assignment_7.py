@@ -12,7 +12,7 @@ f1_1 = lib.f1a
 f1_2 = lib.f1b
 f2 = lib.f2
 f3 = lib.f3
-Euler_method = lib.Euler_method
+Euler_method = lib.Explicit_Euler_method
 Shooting_method = lib.shooting_method
 RK_4 = lib.Runge_Kutta4_method_2_O
 Euler_method(f1_1,100,2,e,0.1)
