@@ -14,13 +14,71 @@ f2 = lambda z,y,x : -z + 1 - x
 f3 = lambda z,y,x : z + 1
 setattr(f1a,'name','dy/dx=ylog(y)/x')
 setattr(f1b,'name','dy/dx=6-(2y/x)')
-setattr(f2,'name','d2y/dx2 dy/dx=1-x')
+setattr(f2,'name','d2y/dx2+dy/dx=1-x')
 setattr(f3,'name','d2y/dx2=dy/dx+1')
+
+import matplotlib.pyplot as plt
+import numpy as np   
+def analytic_function(u,x_0,x_n):
+    if u == f1a:
+        x = np.linspace(x_0,x_n,100)
+        y = np.exp(x/2)
+        label = 'y = exp(x/2)'
+    if u == f1b:
+        x = np.linspace(x_0,x_n,100)
+        y = 2*x - 45/(x*x)
+        label = 'y = 2*x - 45*x^2'
+    if u == f2:
+        x = np.linspace(x_0,x_n,100)
+        y = 1 + 1*np.exp(-x)-(x*x)/2 + 2*x
+        label = 'y = -1+exp(-x)-x^2/2 +2x)'
+    if u == f3:
+        x = np.linspace(x_0,x_n,100)
+        y = 2*np.exp(x)-x-1
+        label = 'y = 2e^x-x-1'
+    return(x,y,label)
+
+def tabular_data(p,x,X=[],Y=[]):
+    f = open(x+'.txt',"w+")
+    if p =='p':
+        for i in range(len(Y)):
+            f.write(str (X[i])+'\t\t'+str(Y[i])+'\n')
+            print(str (X[i])+'\t\t'+str(Y[i])+'\n')
+    else:
+         for i in range(len(Y)):
+            f.write(str (X[i])+'\t\t'+str(Y[i])+'\n')
+    f.close()
+
+def plot_curve(u,t,name):
+    plt.xlabel('x')
+    plt.ylabel('y(x)')
+    if t == 'limx':
+        lx1 = float(input('limit x axis from x1 = '))
+        lx2 = float(input('to x2 = '))
+        plt.xlim(lx1,lx2)
+    if t == 'limy':
+        ly1 = float(input('limit y axis from y1 = '))
+        ly2 = float(input('to y2 = '))
+        plt.ylim(ly1,ly2)
+    if t == 'limxy':
+        lx1 = float(input('limit x axis from x1 = '))
+        lx2 = float(input('to x2 = '))
+        plt.xlim(lx1,lx2)
+        ly1 = float(input('limit y axis from y1 = '))
+        ly2 = float(input('to y2 = '))
+        plt.ylim(ly1,ly2)
+    else:
+        None
+    plt.title(u.name) 
+    plt.legend()
+    plt.savefig(name+'.pdf', dpi = 300)
+    plt.show()
     
 #Explicit_Euler_method     
-def Explicit_Euler_method(u,N,x_0,y_0,h):
+def Explicit_Euler_method(h,u,x_0,y_0,x_n):
     X = [x_0]
     Y = [y_0]
+    N = int((x_n - x_0)/h)
     for n in range(N):
         x = X[-1]+h 
         y = Y[-1]+h*u(Y[-1],X[-1])
@@ -28,14 +86,17 @@ def Explicit_Euler_method(u,N,x_0,y_0,h):
         Y.append(y)
     return(X,Y)  
 
+
+                
+
 #Runge_Kutta4_method_for second order DE
-def Runge_Kutta4_method_2_O(u,N,x_0,x_n,y_0,z_0):
+def Runge_Kutta4_method_2_O(u,h,x_0,x_n,y_0,z_0):
     X = [x_0]
     Y = [y_0]
     x = x_0
     y = y_0
     z = z_0
-    h = (x_n-x_0)/N 
+    N = int((x_n - x_0)/h)
     for n in range(N):
         #defining k1,k2,k3,k4 for all the y and dy/dx
         k1y = h*z
@@ -75,6 +136,6 @@ def shooting_method(u,N,a,b,y_a,y_b):
                 M,N2 = Runge_Kutta4_method_2_O(u,N,a,b,y_a,g_2)
             #lagrange_interpolation
             l = g_1 + (g_2 - g_1)*(y_b-N1[-1])/(N2[-1]-N1[-1])
-            print('Using langrange extrapolation, the slope at y({}) is {}'.format(a,l))
+            print('Using langrange extrapolation, the slope at y({}) is {}\n'.format(a,l))
             M,N1 = Runge_Kutta4_method_2_O(u,N,a,b,y_a,l)
         return(M,N1)
