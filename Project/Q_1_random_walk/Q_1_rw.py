@@ -4,7 +4,7 @@ Created on Wed Jan  6 12:33:19 2021
 
 @author: fida
 """
-from library_project import *
+from lib_project import *
 import math as m
 
 
@@ -24,7 +24,6 @@ for i in N:
     Y_avg.append(Y_d/k)
     sqrtN.append(m.sqrt(i))
     print('For N = {},\n R_avg = {}\n R_rms = {}\n X_avg = {}\n Y_avg = {}\n'.format(i,R_avg[-1],R_rms[-1],X_avg[-1],Y_avg[-1]))
-#plot_graph(R_rms,sqrtN,r'$\sqrt{N}$',r'$R_{rms}$',r'$R_{rms}$ vs $\sqrt{N}$','Rrms_vs_sqrt(N)')
 
 
 """
